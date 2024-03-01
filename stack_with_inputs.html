@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Stack With Inputs</title>
+  <script>
+    let data = [];
+    let currentSize=data.length;
+    let maxVal = 4;
+
+    function push(){
+      let newVal=document.getElementById('newEl').value
+      if(currentSize>=maxVal){
+        alert("Stack limit reached "+newVal);
+      }
+      else{
+        data[currentSize] = newVal;
+        currentSize++;  
+      }
+      console.log("Element added.");
+      document.getElementById('newEl').value="";
+    }
+
+    function pop(){
+      if(currentSize>0)
+      {
+        currentSize--;
+        data.length=currentSize;
+      }
+      else{
+        alert("stack is already empty");
+      }
+      console.log("Element removed.");
+    }
+
+    function display(){
+      for(i=0; i<=currentSize-1; i++){
+        console.log("element no is ",i,"value is ",data[i])
+      }
+    }
+    
+  </script>
+</head>
+<body>
+  <h1>Stack in DSA</h1>
+  <input id="newEl" type="text" placeholder="Enter element here."/>
+  <button onclick="push()">Add element to stack</button>
+  <button onclick="pop()">Remove element from stack</button>
+  <button onclick="display()">Display all elements in stack</button>
+  
+</body>
+</html>

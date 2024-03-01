@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indirect Recursion</title>
+  <script>
+    let money = 100;
+    let totalGrosery = 0;
+
+    function getItem(amount) {
+      // console.log(amount);
+      if (amount > 0) {
+        console.log("I bought total", totalGrosery, "items,", "I am left with", amount, "rs");
+        getMore(amount);
+      }
+      else {
+        console.log("I don't have enough money", amount, "rs.");
+      }
+    }
+
+    function getMore(amount) {
+      // console.log("Buy more");
+      amount = amount - 20;
+      totalGrosery++;
+      getItem(amount);
+    }
+
+    getItem(money);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

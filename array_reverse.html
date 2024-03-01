@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Reverse Array Using Recursion</title>
+  <script>
+    let arr = [10, 92, 48, 54, 31, 77];
+    let temp;
+    
+    
+    //done using own logic with creating function
+    
+    function arrReverse(arr, start, end) {
+      console.log(arr);
+      if (start <= end) {
+        temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        arrReverse(arr, start + 1, end - 1);
+      }
+    }
+    arrReverse(arr, 0, arr.length - 1);
+    
+    //using inbuilt funtion
+    //data used from above
+    // console.log('done using reverse()',arr.reverse());
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

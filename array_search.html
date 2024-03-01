@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Array Search Element</title>
+  <script>
+    function searchArray(){
+
+      let data = [20, 40, 10, 90, 30, 15, 55, 70];
+      let item =  document.getElementById('searchEl').value;
+      let index = undefined;
+      for(i=0; i<=data.length-1; i++){
+        // console.log(data[i]);
+        if(data[i]===parseInt(item)){
+          index=i;
+          document.writeln("Present Elements in Array : " +data);
+          document.write("<br>Element Found at Index : "+index);
+          break;
+        }
+      }
+      console.log(index)
+    }
+    //using in-built function for index
+    // console.log(data.indexOf(item));
+
+    //delete element in array using in-built function(splice)
+    // data.splice(3, 1);
+    // console.log(data);
+  </script>
+
+</head>
+<body>
+  <input type="text" id="searchEl" placeholder="Enter value" />
+  <button onclick="searchArray()">Search Element</button>
+  
+</body>
+</html>
