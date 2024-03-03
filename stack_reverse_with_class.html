@@ -6,39 +6,44 @@
   <title>Stack Reverse String using class</title>
   <script>
     class ReverseStr {
-      data = [];
-      currentSize;
-      lastRemovedItem;
-
       constructor() {
-        this.currentSize = this.data.length;
+        this.data = [];
+        this.currentSize = 0;
       }
 
       reverse(str) {
         for (let i = 0; i < str.length; i++) {
           this.push(str[i]);
         }
-        for (let i=0; i<str.length; i++){
-          this.item[i] = this.pop();
+        let reversedStr = '';
+        for (let i = 0; i < str.length; i++) {
+          reversedStr += this.pop();
         }
+        return reversedStr;
       }
 
-      pop(){
-        this.lastRemovedItem = this.data[this.currentSize-1];
+      pop() {
+        if (this.currentSize === 0) {
+          return undefined; // Stack underflow
+        }
         this.currentSize--;
-        this.data.length= this.currentSize;
-        return this.lastRemovedItem;
+        const lastRemovedItem = this.data.pop();
+        return lastRemovedItem;
       }
 
       push(newVal) {
-        this.data[this.currentSize] = newVal;
+        this.data.push(newVal);
         this.currentSize++;
+      }
+
+      display() {
+        console.log(this.data);
       }
     }
 
-    st = new ReverseStr();
-    st.reverse("gaurav");
-
+    const st = new ReverseStr();
+    // st.reverse("gaurav");
+    // st.display();
   </script>
 </head>
 
