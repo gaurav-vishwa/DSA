@@ -9,27 +9,54 @@
     let currentSize = queue.length;
     let mazSize = 4;
 
-    function enqueue(newVal) {
+    function enqueue() {
+      let newVal = document.getElementById("Elq").value;
       if (currentSize >= mazSize) { 
         alert("Queue is full.");
         console.warn("Queue max size reached: "+mazSize);
       }else{
         queue[currentSize]=newVal;
         currentSize++;
+        console.log("Element Inserted.");
       }
+      document.getElementById("Elq").value="";
     }
 
     function dequeue() {
-      if(queue.length<=0){
+      if(isEmpty()){
         alert("Queue is empty.");
-        console.warn("Queue is empty: "+queue.length);
+        console.warn("Queue is empty: "+currentSize);
       }else{
         for(let i=0; i<currentSize; i++){
           queue[i]=queue[i+1];
         }
         currentSize--;
         queue.length=currentSize;
-        // console.log(queue[i]);
+        console.log("Element Removed.");
+      }
+    }
+
+    function front(){
+      if(!isEmpty()){
+        console.log(queue[0]);
+      }else{
+        alert("Queue Is Empty.");
+      }
+    }
+
+    function rear(){
+      if(!isEmpty()){
+        console.log(queue[currentSize-1]);
+      }else{
+        alert("Queue Is Empty");
+      }
+    }
+
+    function isEmpty(){
+      if(currentSize<=0){
+        return true;
+      }else{
+        return false;
       }
     }
 
@@ -37,14 +64,22 @@
       console.log(queue);
     }
 
-    enqueue(77);
-    display();
+
 
   </script>
 </head>
 
 <body>
   <h1>Queue in javascript</h1>
+<br/>
+<input placeholder="Enter Element" id="Elq"/>
+<button onclick="enqueue()">Add Element</button>
+<br/>
+<br/>
+<button onclick="dequeue()">Remove Element</button>
+<button onclick="front()">Front Element</button>
+<button onclick="rear()">Rear Element</button>
+<button onclick="display()">Display Element</button>
 </body>
 
 </html>
