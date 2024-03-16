@@ -6,28 +6,32 @@
   <title>Linear Search in js</title>
   <script>
 
-    function Search(ele) {
+    function Search() {
       let data = [0, 1, 55, 32, 54, 12, 10, 15, 9];
-      let find = ele;
+      let find = document.getElementById("el").value;;
       let pos = undefined;
       for (i = 0; i <= data.length; i++) {
         if (data[i] == find) {
           pos = i;
-          return console.log("Element located at index : "+pos);  
+          console.log("Element located at index : "+pos);    
+          return alert("Element is at position : "+pos);
         }
       }
       if(!pos){
         alert("Element not listed.")
         console.log("Element not listed in array.")
       }
+      // find = document.getElementById("el").value="";
     }
 
-    Search(15);
+    // Search(15);
   </script>
 </head>
 
 <body>
   <h1>Linear Search in Javascript</h1>
+  <input type="text" id="el" placeholder="Enter your element" />
+  <button onclick="Search()">Search Element</button>
 </body>
 
 </html>
