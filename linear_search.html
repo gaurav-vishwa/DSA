@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Linear Search in js</title>
+  <script>
+
+    function Search(ele) {
+      let data = [0, 1, 55, 32, 54, 12, 10, 15, 9];
+      let find = ele;
+      let pos = undefined;
+      for (i = 0; i <= data.length; i++) {
+        if (data[i] == find) {
+          pos = i;
+          return console.log("Element located at index : "+pos);  
+        }
+      }
+      if(!pos){
+        alert("Element not listed.")
+        console.log("Element not listed in array.")
+      }
+    }
+
+    Search(15);
+  </script>
+</head>
+
+<body>
+  <h1>Linear Search in Javascript</h1>
+</body>
+
+</html>
